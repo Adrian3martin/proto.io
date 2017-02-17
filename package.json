@@ -1,0 +1,21 @@
+{
+  "name": "prototype",
+  "version": "1.0.0",
+  "description": "This is a rapid prototyping development server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
