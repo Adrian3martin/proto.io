@@ -24,6 +24,7 @@ module.exports = function(grunt){
             },
             js: {
                 files: ['dev/scripts/**/*.js'],
+                tasks: ['minjs','copy'],
                 options : {
                     livereload : true
                 }
@@ -54,6 +55,15 @@ module.exports = function(grunt){
                     cssDir: 'dist/assets/css',
                     environment: 'development'
                 }
+            }
+        },
+        copy: {
+
+            files: {
+                cwd: 'dev/scripts',  // set working folder / root to copy
+                src: '**/*',           // copy all files and subfolders
+                dest: 'dist/assets/js',    // destination folder
+                expand: true           // required when using cwd
             }
         },
         uglify: {

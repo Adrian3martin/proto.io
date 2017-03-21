@@ -16,6 +16,7 @@
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-copy": "^0.1.0",
     "load-grunt-tasks": "^3.5.2"
   }
 }
