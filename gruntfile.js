@@ -58,7 +58,9 @@ module.exports = function(grunt){
             }
         },
         copy: {
-
+            options: {
+                punctuation: ''
+            },
             files: {
                 cwd: 'dev/scripts',  // set working folder / root to copy
                 src: '**/*',           // copy all files and subfolders
