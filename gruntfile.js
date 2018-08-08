@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+
 'use strict';
 module.exports = function(grunt){
     // load all grunt tasks matching the ['grunt-*', '@*/grunt-*'] patterns 
@@ -15,9 +17,9 @@ module.exports = function(grunt){
                   reload: true
                 }
             },
-            sass: {
-                files: ['dev/sass/**/*.scss'],
-                tasks: ['compass'],
+            scss: {
+                files: ['dev/scss/**/*.scss'],
+                tasks: ['sass'],
                 options : {
                     livereload : true
                 }
@@ -48,17 +50,22 @@ module.exports = function(grunt){
                 }
             }
         },
-        compass: {                  // Task
-            dev: {                   // Target
-                options: {              // Target options
-                    sassDir: 'dev/sass',
-                    cssDir: 'dist/assets/css',
-                    environment: 'development'
+        sass: {
+            options: {
+                implementation: sass,
+                sourceMap: true,
+                livereload: true,
+            },
+            dist: {
+                files : {
+                    'dist/assets/css/index.css':'dev/scss/index.scss'
                 }
-            }
+            },
         },
         copy: {
-
+            options: {
+                punctuation: ''
+            },
             files: {
                 cwd: 'dev/scripts',  // set working folder / root to copy
                 src: '**/*',           // copy all files and subfolders
@@ -76,11 +83,12 @@ module.exports = function(grunt){
     });
 
     grunt.registerTask('minjs',['uglify:dist']);
-    grunt.registerTask('build',['compass','uglify:dist']);
+    grunt.registerTask('build',['sass','uglify:dist']);
+    grunt.registerTask('default',['sass']);
 
     //Register tasks
     grunt.registerTask('serve', [
-        'compass',
+        'sass',
         'connect',
         'watch'
     ]);

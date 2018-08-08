@@ -9,7 +9,7 @@ proto.index =  {
 
 //JQuery check may be needed for wordpress
 //jQuery(document).ready(function($) {
-    window.proto.index.init();    
+    window.proto.index.init();
 //});
 
 
